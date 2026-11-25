@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f5;
+  font-family: sans-serif;
+}
+
+.box {
+  background: hsl(200, 88%, 38%);
+  padding: 92px;
+  border-radius: 100px;
+  text-align: center;
+}
+.text{
+    font-size: 2rem;
+    margin: 30px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 95px;
+}
+
+button {
+  font-size: 1.5rem;
+  padding: 12px 18px;
+  margin: 10px;
+  border: 0;
+  border-radius: 8px;
+  background: #e4e4e7;
+  cursor: pointer;
+  text-shadow: #f4f4f5;
+}

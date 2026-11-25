@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>STOP WATCH</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="box">
+    <div class="text">
+      <h1 id="min">00</h1>
+      <h1 id="sec">00</h1>
+      <h1 id="msec">00</h1>
+    </div>
+    <button onclick="start()" id="start">Start</button>
+    <button onclick="pause()" id="pause">Pause</button>
+    <button onclick="Reset()" id="Reset">Reset</button>
+  </div>
+  <script>
+    var min = 0;
+    var sec = 0;
+    var msec = 0;
+    var minHead = document.getElementById("min");
+    var secHead = document.getElementById("sec");
+    var msecHead = document.getElementById("msec");
+    var interval;
+    function timer() {
+      msec++;
+      msecHead.innerHTML = msec;
+      if (msec >= 100) {
+        sec++;
+        secHead.innerHTML = sec;
+        msec = 0;
+      }
+      else if (sec >= 60) {
+        min++;
+        sec = 0;
+        minHead.innerHTML = min;
+      }
+    }
+    function start() {
+      interval = setInterval(timer, 10);
+      disableBtn();
+    }
+    function pause() {
+      clearInterval(interval);
+      document.getElementById("start").innerHTML = "resume"
+      enableBtn();
+    }
+    function Reset() {
+      debugger;
+      min = 0;
+      sec = 0;
+      msec = 0;
+      secHead.innerHTML = sec;
+      minHead.innerHTML = min;
+      msecHead.innerHTML = msec;
+      enableBtn();
+      document.getElementById("start").innerHTML = "Start"
+      clearInterval(interval);
+
+    }
+    function disableBtn() {
+      document.getElementById("start").disabled = true;
+    }
+
+    function enableBtn() {
+      document.getElementById("start").disabled = false;
+    }
+
+
+  </script>
+</body>
+
+</html>
